@@ -33,6 +33,7 @@ from . import main_export
 from . import main_list
 from . import main_remove
 from . import main_update
+from . import main_run
 
 
 # TODO: This belongs in a helper library somewhere
@@ -52,6 +53,7 @@ def create_parser():
     main_list.configure_parser(sub_parsers)
     main_remove.configure_parser(sub_parsers)
     main_update.configure_parser(sub_parsers)
+    main_run.configure_parser(sub_parsers)
 
     show_help_on_empty_command()
     return p

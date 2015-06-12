@@ -30,6 +30,7 @@ All of the usage is documented via the ``--help`` flag.
         list                List the Conda environments
         remove              Remove an environment
         update              Updates the current environment based on environment file
+        run                 Executes a command within a given environment
 
     optional arguments:
       -h, --help            show this help message and exit
