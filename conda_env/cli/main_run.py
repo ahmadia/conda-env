@@ -1,9 +1,10 @@
 from argparse import RawDescriptionHelpFormatter
 import os
-from subprocess import call
 
 from conda import config
 from conda.cli import common
+from ..run import env_run
+
 
 description = """
 Run a program inside a given conda environment.
@@ -52,7 +53,4 @@ def configure_parser(sub_parsers):
     p.set_defaults(func=execute)
 
 def execute(args, parser):
-    activate_env = "source activate %s; " % args.environment
-    command = activate_env + args.program + ' ' + ' '.join(args.arguments)
-    print("Executing: " + command)
-    call(command, shell=True)
+    env_run(args.environment, args.program, args.arguments)
